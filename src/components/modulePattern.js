@@ -21,10 +21,8 @@
         };
 
         return {
-            init: function(element) {
+            init: function(element, newText) {
                 _$.element = element;
-            },
-            newTextToChange: function(newText) {
                 _$.newText = newText;
                 _changeTextContent();
             },
