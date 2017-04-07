@@ -1,10 +1,10 @@
 (function() {
-    var subject = document.querySelector('.subject__container');
-    var observers = document.querySelectorAll('.observer__container');
+    var publisher = document.querySelector('.publisher__container');
+    var subscribers = document.querySelectorAll('.subscriber__container');
 
-    window.appNamespace.subject().init(subject);
+    window.appNamespace.publisher().init(publisher);
 
-    for (var i = 0; i < observers.length; i++) {
-        window.appNamespace.observer().init(observers[i]);
+    for (var i = 0; i < subscribers.length; i++) {
+        window.appNamespace.subscriber().init(subscribers[i]);
     }
 })();
