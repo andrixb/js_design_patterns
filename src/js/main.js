@@ -29,6 +29,7 @@
     };
 
     newObj = new MainObject(API_URL);
+    // needs to verify response timing
     newObj.fetchData();
 
 })();
