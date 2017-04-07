@@ -1,34 +1,18 @@
 (function () {
-    var API_URL = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho';
     var imgElement = document.querySelector('.image__element');
+    var IMG_URL = 'http://placehold.it/350x150';
     var newObj = null;
 
-    function MainObject(api) {
-        this.data = '';
-        this.apiURL = api;
-        this.received = false;
-
-        this.getData = function() {
-            return this.data;
-        };
+    function MainObject(url) {
+        this.url = url;
     }
 
     MainObject.prototype = {
-        fetchData: function () {
-            fetch(this.apiURL, {
-                method: 'GET'
-            }).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                this.data = data.data;
-                this.received = true;
-            }).catch(function (err) {
-                throw err;
-            });
+        assignSrc: function (element) {
+            element.setAttribute('src', this.url);
         }
     };
 
-    newObj = new MainObject(API_URL);
-    newObj.fetchData();
-
+    newObj = new MainObject(IMG_URL);
+    newObj.assignSrc(imgElement);
 })();
